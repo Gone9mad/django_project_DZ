@@ -31,6 +31,12 @@ class Product(models.Model):
         verbose_name="Дата изменения записи",
         help_text="Укажите дату изменения",
     )
+    manufactured_at = models.DateField(
+        **NULLABLE,
+        verbose_name="Дата производства продукта",
+        help_text="Укажите дату производства продукта",
+    )
+
 
     def __str__(self):
         return f"{self.name}"
