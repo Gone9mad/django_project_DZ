@@ -28,7 +28,7 @@ class Product(models.Model):
         verbose_name="Описание", help_text="Введите описание продукта", **NULLABLE
     )
     image = models.ImageField(
-        upload_to="product/image", verbose_name="Изображение", **NULLABLE
+        upload_to="product/photo", verbose_name="Изображение", **NULLABLE
     )
     category = models.ForeignKey(
         Category,
