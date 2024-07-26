@@ -58,3 +58,14 @@ class Product(models.Model):
         verbose_name_plural = "Продукты"
 
 
+class BlogPost(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Заголовок')
+    slug = models.CharField(max_length=200, verbose_name='slug', **NULLABLE)
+    content = models.TextField(max_length=500, verbose_name='Содержимое', **NULLABLE)
+    preview = models.ImageField(upload_to="product/photo", verbose_name="Превью", **NULLABLE)
+    date_of_creation = models.DateField(verbose_name='Дата создания записи', **NULLABLE)
+    publication = models.BooleanField(default=True, verbose_name='Опубликовано')
+    number_of_views = models.IntegerField(default=0, verbose_name='Просмотры')
+
+    def __str__(self):
+        return f'{self.title}'
