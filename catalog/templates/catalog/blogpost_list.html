@@ -1,5 +1,15 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
+ <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Блог Пост</h1>
+                <p>
+                    <a href="{% url 'catalog:create' %}" class="btn btn-primary my-2">Добавить блог</a>
+                </p>
+            </div>
+        </div>
+    </section>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             {% for object in object_list %}

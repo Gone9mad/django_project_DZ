@@ -69,3 +69,16 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    version_number = models.PositiveIntegerField(verbose_name='Номер версии')
+    version_name = models.CharField(max_length=100, verbose_name='Название версии')
+    current_version_indicator = models.BooleanField(default=True, verbose_name='Текущая версия')
+
+    def __str__(self):
+        return f'{self.product.name} - {self.version_number} - {self.version_name} {self.current_version_indicator}'
+
+    class Meta:
+        verbose_name = 'Версия продукта'
+        verbose_name_plural = 'Версии продуктов'
